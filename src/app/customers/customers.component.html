@@ -1,0 +1,66 @@
+<!-- <p>customers works!</p>
+<form [formGroup]="userform" (ngSubmit)="login()">
+    <div>
+        <label for="Customermailid">Mail Id</label>
+        <input id="Customermailid" type="text" placeholder="Enter mail id" formControlName="Customermailid">
+        <span></span>
+    </div>
+    <div>
+        <label for="Customerpassword">Password</label>
+        <input id="Customerpassword" type="password" placeholder="Enter Password" formControlName="Customerpassword">
+    </div>
+    <button type="submit" [disabled]="!userform.valid" class="btn btn-outline-primary btn-lg mt-5 ml-5" >Sign in</button>
+
+</form> -->
+<div  class="bgdiv">
+    <div class="row">
+        <div style="height:10px"></div>
+        <div class="col-md-4 outerdivform">
+            <form [formGroup]="userform" (ngSubmit)="login()">
+                <div  class="text-danger"></div>
+                <div class="innerdivform"><br />
+                    <h3 style="margin-left:80px;">Login</h3><br /><br />
+
+                    <div class="form-group element">
+                        <label for="Customermailid"style="margin-left:70px;" class="control-label">Mail Id</label>
+        <input  class="form-control inputdesign" id="Customermailid" type="email" placeholder="Enter mail id" formControlName="Customermailid" required="true">
+                        <span  *ngIf="userform.controls['Customermailid'].errors && userform.controls['Customermailid'].touched">
+                            <span style="font-size:15px;" *ngIf="userform.controls['Customermailid'].errors['required']">*</span>
+                            <span *ngIf="userform.controls['Customermailid'].errors['Customermailid']">Invalid email format.</span>
+
+                        </span>
+                        <span *ngIf="errormsg1!=''" class="alert alert-danger" style="text-align:center;font-size:13px;">{{errormsg1}}</span>
+
+                        <br>
+
+                    </div><br />
+
+                    <div class="form-group ">
+                        <label for="Customerpassword"style="margin-left:70px;" class="control-label">Password</label>
+                        <input  class="form-control inputdesign" id="Customerpassword" type="password" placeholder="Enter Password" formControlName="Customerpassword">
+                        <span  *ngIf="userform.controls['Customerpassword'].errors && userform.controls['Customerpassword'].touched">
+
+                        <span style="color:white;font-size:15px;" *ngIf="userform.controls['Customerpassword'].errors['required']">*</span>
+                        </span>
+                       
+                        <span *ngIf="errormsg2!=''" class="alert alert-danger" style="text-align:center;font-size:13px;">{{errormsg2}}</span>
+
+                    </div>
+
+                    <br>
+                    <div class="form-group" style="margin-left:40px;">
+                        <input type="submit" class="button-design" value="Login" style="background-color:darkgreen;color:white;width:140px;border: none;height:40px;font-size:17px;;" />
+                    </div>
+                    <br>
+
+                </div>
+                <a  style="margin-left:70px;font-size:17px;text-decoration:none;color:antiquewhite;" routerLink="/RegisterUser">Do not have an account? Create Now</a>
+                <br />  <a  style="margin-left:170px;font-size:16px;text-decoration:none;color:antiquewhite;"routerLink="/AdminLogin">Admin?</a>
+
+            </form>
+        </div>
+    </div>
+
+    <div>
+    </div>
+</div>

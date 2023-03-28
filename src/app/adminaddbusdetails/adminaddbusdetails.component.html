@@ -1,0 +1,111 @@
+<app-adminheader></app-adminheader>
+<div style="min-height: 500px;">
+    <br>
+    <h1 style="margin-left:650px;">Add Bus Details</h1>
+    <!-- @if (@ViewBag.seatcapacity != null)
+    {
+        <p style="font-size:15px;color:red;">@ViewBag.seatcapacity</p>
+    } -->
+    <hr /><br>
+    <div style="margin-left:600px;">
+        <div>
+            <form [formGroup]="adminaddbusform" (ngSubmit)="addbus()">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="busname" class="control-label">Bus Name</label>
+                        </td>
+                        <td>
+                            <input id="busname" formControlName="busname" type="text"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="source" class="control-label">Source</label>
+                        </td>
+                        <td>
+                            <input id="source" formControlName="source" type="text"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="destination" class="control-label">Destination</label>
+                        </td>
+                        <td>
+                            <input id="destination"type="text" formControlName="destination" />
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+
+                            <span  class="text-danger" *ngIf="errordest!=''">{{errordest}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="seatcapacity" class="control-label">Seat Capacity</label>
+                        </td>
+                        <td>
+                            <input id="seatcapacity" type="number" formControlName="seatcapacity"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                       
+                    </tr>
+                     <tr>
+                        <td>
+                            <label for="noofseats" class="control-label">No Of Seats</label>
+                        </td>
+                        <td>
+                            <input id="noofseats" type="number" formControlName="noofseats" />
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+
+                            <span  class="text-danger" *ngIf="errorcap!=''">{{errorcap}}</span>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <label for="busfare" class="control-label">Bus Fare</label>
+                        </td>
+                        <td>
+                            <input id="busfare" type="number" formControlName="busfare" />
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bustime" class="control-label">Bus Time</label>
+                        </td>
+                        <td>
+                            <input id="bustime" type="text" formControlName="bustime" />
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <input style="margin-left:75px;cursor: pointer;border:none;height:35px;background: darkblue;width:100px;color:white;border-radius: 17px;;" type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <button routerLink="/ViewBusDetailsAdmin" style="margin-left:650px;cursor: pointer;border:none;height:40px;"><a style="text-decoration:none;color:antiquewhite" >Back to Bus Details</a></button>
+
+    </div>
+</div>
+
+<app-adminfooter></app-adminfooter>

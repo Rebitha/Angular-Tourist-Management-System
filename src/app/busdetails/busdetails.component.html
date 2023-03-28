@@ -1,0 +1,41 @@
+<app-customer-pages></app-customer-pages>
+
+<br><br>
+<div style="min-height:400px;">
+    <div style="margin-left:550px;color:red"*ngIf="errormsg!=''">{{errormsg}}</div><br>
+<div *ngFor="let bus of busDetails" style="min-height:400px;">
+<div style="height:300px;">
+    <div class="inner-div">
+        <p class="busnamestyle"> {{bus.busname}}</p>
+    </div>
+    <div class="inner-div">
+       <p class="descstyle">From  : {{bus.source}}<br>To  :  {{bus.destination}}<br>Time  :  {{bus.bustime}}<br>No Of Seats Left  :  {{bus.noofseats}}<br />Bus Fare : {{bus.busfare}}</p>
+    </div>
+    <br /><br />
+    <div class="inner-div">
+        <div *ngIf="bus.noofseats==0">
+            <p style="color:darkblue;font-size:20px;">Filled</p>
+        </div>
+        <div *ngIf="bus.noofseats!=0">
+            <div class="buttonstyle"><a [routerLink]="['/BookNow',bus.busid]" >Book Now</a></div>
+        </div>
+        <!-- @if(@item.Noofseats==0){
+           <p style="color:darkblue;font-size:20px;">Filled</p>
+<a class="b" style="text-decoration:none;">Book Now</a>
+        }
+        
+        else
+        {
+             <div class="buttonstyle"><button><a asp-action="BookNow" asp-route-id="@item.Busid" style="text-decoration:none;color:white;">Book Now</a></button></div>
+
+        } -->
+    </div>
+
+</div>
+
+</div>
+<div><button [routerLink]="['/ViewTouristSpots']" style="color:white;margin-left:700px;">Back</button></div>
+</div>
+<app-customerfooter></app-customerfooter>
+
+

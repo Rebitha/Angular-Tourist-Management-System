@@ -1,0 +1,88 @@
+<div class="bgdiv">
+    <div class="row">
+        <br>
+        <div class="col-md-4 outerdivform">
+            <form [formGroup]="registerform" (ngSubmit)="register()">
+                <div class="innerdivform">
+                    <br><br>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label for="Customername" class="control-label inputlabeldesign" style="margin-left:150px;">Name</label><br />
+                        <input id="Customername" type="text"class=" inputdesign" formControlName="Customername"/>
+                        <span  class="textvaliddesign">
+                            <span class="textvaliddesign" *ngIf="registerform.controls['Customername'].errors && (registerform.controls['Customername'].touched || submitted)">
+                                <span style="font-size:15px;" *ngIf="registerform.controls['Customername'].errors['required']">*</span>
+    
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Customermailid" class="control-label inputlabeldesign" style="margin-left:140px;">Mail Id</label><br />
+                        <input id="Customermailid" class="inputdesign" type="email" formControlName="Customermailid"/>
+                        <span class="textvaliddesign" *ngIf="registerform.controls['Customermailid'].errors && (registerform.controls['Customermailid'].touched || submitted)">
+                            <span style="font-size:15px;" *ngIf="registerform.controls['Customermailid'].errors['required']">*</span>
+                            <!-- <span *ngIf="registerform.controls['Customermailid'].errors['Customermailid'].email">Invalid email </span> -->
+
+                        </span>
+                        
+                        <span  class="textvaliddesign">
+                            <span *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </span>
+                        <!-- @if (@ViewBag.msg != null)
+                        {
+                            <p class="textvaliddesign">@ViewBag.msg</p>
+                        } -->
+                    </div>
+                    <div class="form-group">
+                        <label for="Customerpassword" class="control-label inputlabeldesign" style="margin-left:135px;">Password</label><br />
+                        <input id="Customerpassword" type="password" class="inputdesign " formControlName="Customerpassword"/>
+                        <span  class="textvaliddesign">
+                            <span class="textvaliddesign" *ngIf="registerform.controls['Customerpassword'].errors && (registerform.controls['Customerpassword'].touched || submitted)">
+                                <span style="font-size:15px;" *ngIf="registerform.controls['Customerpassword'].errors['required']">*</span>
+    
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="ConfirmPassword" class="control-label inputlabeldesign"style="margin-left:100px;">Confirm Password</label><br />
+                        <input id="ConfirmPassword" type="password" class="inputdesign" formControlName="ConfirmPassword" />
+                        <span  class="textvaliddesign">
+                            <span *ngIf="errormsgname!=''">{{errormsgname}}</span>
+                            <span class="textvaliddesign" *ngIf="registerform.controls['ConfirmPassword'].errors && (registerform.controls['ConfirmPassword'].touched || submitted)">
+                                <span style="font-size:15px;" *ngIf="registerform.controls['ConfirmPassword'].errors['required']">*</span>
+                                <span *ngIf="errormsgname!=''">{{errormsgname}}</span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label style="margin-left:140px;" for="Customercontact" class="control-label inputlabeldesign">Contact</label><br />
+                        <input id="Customercontact" class="inputdesign" type="text" formControlName="Customercontact" />
+                        <span  class="textvaliddesign">
+                            <span class="textvaliddesign" *ngIf="registerform.controls['Customercontact'].errors && (registerform.controls['Customercontact'].touched || submitted)">
+                                <span style="font-size:15px;" *ngIf="registerform.controls['Customercontact'].errors['required']">*</span>
+    
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Nationality" class="control-label inputlabeldesign" style="margin-left:130px;">Nationality</label><br />
+                        <input id="Nationality" class="inputdesign" type="text" formControlName="Nationality"/>
+                        <span  class="textvaliddesign">
+                            <span class="textvaliddesign" *ngIf="registerform.controls['Nationality'].errors && (registerform.controls['Nationality'].touched || submitted)">
+                                <span style="font-size:15px;" *ngIf="registerform.controls['Nationality'].errors['required']">*</span>
+    
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group" style="margin-left:90px;">
+                        <input type="submit" value="Register" style="background-color:darkgreen;color:white;width:140px;height:40px;margin-top:10px;border:none;" class="button-design" />
+                    </div>
+
+
+                </div><br>
+                <a routerLink="/Login" style="margin-left:80px;margin-left:390px;font-size:15px;text-decoration:none;color:antiquewhite;">Already Registered? Sign in</a>
+            </form>
+        </div>
+    </div>
+
+</div>

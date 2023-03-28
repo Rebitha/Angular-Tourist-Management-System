@@ -1,0 +1,26 @@
+<app-customer-pages></app-customer-pages>
+<div style="min-height: 400px;">
+   
+    <div class="bgdiv" >
+
+        <br><br><br><br>
+        <input style="margin-left: 500px;height:23px;;width:500px;padding:5px;" placeholder="Search your favourite places" type="text" [(ngModel)]="searchspotlocation" id=txtbrand #brand>
+      </div>
+      <br><br>
+      
+    <div class="bodyplace" *ngFor="let spot of touristspots | spotlocationfilterPipe:searchspotlocation ">
+        <div class="floatdiv">
+            <img src="../../assets/images/{{spot.imagename}}" asp-append-version="true" width="200px" height="200px">
+        </div><div class="floatdiv textstyle">
+            <span class="spotnamestyle" style="font-family:'Comic Sans MS';font-size:30px;">{{spot.spotname}}</span><br>
+            <span class="spotlocstyle">{{spot.spotlocation}}</span><br>
+            <span class="spotstatestyle">{{spot.spotstate}}</span><br><br>
+            <a  [routerLink]="['/ViewBusDetails', spot.spotid]"  style="text-decoration:none;color:darkblue;font-size:16px">Need Travel Facilities ?</a>
+        </div>
+
+    </div>
+
+</div>
+<!-- [routerLink]="['/ViewBusDetails', spot.spotid]" -->
+<app-customerfooter></app-customerfooter>
+

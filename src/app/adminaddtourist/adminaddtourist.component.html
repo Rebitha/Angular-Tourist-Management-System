@@ -1,0 +1,107 @@
+<app-adminheader></app-adminheader>
+<div style="min-height: 400px;">
+  
+<style>
+    header {
+        height: 75px;
+        width: 100%;
+        background: #0b114a;
+        position: fixed;
+    }
+
+    button {
+        border-radius: 3px;
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 20px;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: Arial;
+        font-weight: 500;
+        text-align: center;
+        background: darkblue;
+        transition: all 0.2s;
+    }
+    td{
+        padding:10px;
+    }
+</style>
+<div>
+        <h1>Add Tourist Spots</h1>
+        <hr />
+        <div>
+            <div>
+                <form [formGroup]="adminaddtouristform" enctype="multipart/form-data" (ngSubmit)="addtourist()">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="Spotname">Spot Name</label>
+                            </td>
+                            <td>
+                                <input id="Spotname" type="text" formControlName="spotname"/><br />
+                            </td>
+                            <td>
+                                <span  class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Spotlocation">Spot Location</label>
+                            </td>
+                            <td>
+                                <input id="Spotlocation" type="text" formControlName="spotlocation"/><br />
+                            </td>
+                            <td>
+                                <span class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Spotstate">Spot State</label>
+                            </td>
+                            <td>
+                                <input id="Spotstate" type="text" formControlName="spotstate" /><br />
+                            </td>
+                            <td>
+                                <span class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Imagetitle">Image Title</label>
+                            </td>
+                            <td>
+                                <!-- <input type="text" (change)="getName(name.value)" #name> -->
+                                <input id="Imagetitle" type="text" formControlName="imagetitle"/><br />
+                            </td>
+                            <td>
+                                <span class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ImageFile">Upload Image</label>
+                            </td>
+                            <td>
+                                <input id="ImageFile" (change)="getFile($event)" type="file"  /><br />
+                            </td>
+                            <td>
+                                <span  class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div>
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                    <br />
+                    <button><a style="text-decoration:none;color:antiquewhite" asp-action="ViewTouristSpotDetails">Back to Tourist Details</a></button>
+                </form>
+            </div>
+        </div>
+</div>
+</div>
+
+
+<app-adminfooter></app-adminfooter>

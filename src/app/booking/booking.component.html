@@ -1,0 +1,49 @@
+<app-customer-pages></app-customer-pages>
+
+<div class="row">
+    <div class="col-md-4 outerdivform">
+        <form [formGroup]="ticketform" (ngSubmit)="bookticket()">
+            <div class="innerdivform">
+                <br>
+                <br>
+                <div ></div>
+                <!-- @if (ViewBag.noofseatsmsg != null)
+                {
+                    <span style="margin-left:30px;color:red;font-size:15px;">@ViewBag.noofseatsmsg</span>
+                }
+                @if (@ViewBag.noofseatsvalid != null)
+                {
+                    <span style="color:red;font-size:15px;">@ViewBag.noofseatsvalid</span>
+                } <span asp-validation-for="Noofseats" style="color:red;font-size:15px;"></span> -->
+                <div *ngIf="seatserror!=''"style="margin-left:50px;color:red;font-size:15px;">
+                    {{seatserror}}
+
+                </div>
+                <div>
+                    <label for="noofseats" style="margin-left:80px;" class="control-label">No Of Seats</label><br /><br />
+                    <input for="noofseats"style="margin-left:25px;" type="number" class="form-control inputdesign"formControlName="noofseats"/>
+                   
+                </div>
+
+                <br />
+                <div>
+                    <div *ngIf="dateerror!=''"style="margin-left:80px;color:red;font-size:15px;">
+                        {{dateerror}}
+    
+                    </div>
+                    <!-- @if (@ViewBag.datevalidity != null)
+                    {
+                        <span style="color:red;font-size:15px;">@ViewBag.datevalidity</span>
+                    } -->
+                    <!-- <span asp-validation-for="Bookingdate" style="color:red;font-size:15px;"></span> -->
+                    <label for="bookingdate" style="margin-left:80px;" class="control-label">Travel Date</label><br /><br />
+                    <input for="bookingdate" type="date" style="margin-left:25px;"class="form-control inputdesign" formControlName="bookingdate" />
+                    
+                </div><br><br>
+               <input class="button-style" style="background:darkblue;color:white;border-radius:15px;height:30px;width:90px;margin-left:90px;border:none;cursor: pointer;;"type="submit" value="Book">
+            </div>
+        </form>
+    </div>
+</div>
+<app-customerfooter></app-customerfooter>
+

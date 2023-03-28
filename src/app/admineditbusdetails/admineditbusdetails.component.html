@@ -1,0 +1,156 @@
+<app-adminheader></app-adminheader>
+<div style="min-height: 400px;">
+    <h1>Edit the Bus Details</h1>
+    <hr />
+    <div>
+        <!-- @if (@ViewBag.seatcapacity != null)
+        {
+            <p style="font-size:15px;color:red;">@ViewBag.seatcapacity</p>
+        } -->
+        <div >
+            <form [formGroup]="adminaddbusform" (ngSubmit)="addbus()">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="busname" class="control-label">Bus Name</label>
+                        </td>
+                        <td>
+                            <input id="busname" formControlName="busname" [ngModel]="bus.busname" type="text"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="source" class="control-label">Source</label>
+                        </td>
+                        <td>
+                            <input id="source" formControlName="source" type="text" [ngModel]="bus.source"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="destination" class="control-label">Destination</label>
+                        </td>
+                        <td>
+                            <input id="destination"type="text" formControlName="destination"[ngModel]="bus.destination"  />
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+
+                            <span  class="text-danger" *ngIf="errordest!=''">{{errordest}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="seatcapacity" class="control-label">Seat Capacity</label>
+                        </td>
+                        <td>
+                            <input id="seatcapacity" type="number" formControlName="seatcapacity"[ngModel]="bus.seatcapacity"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                       
+                    </tr>
+                     <tr>
+                        <td>
+                            <label for="noofseats" class="control-label">No Of Seats</label>
+                        </td>
+                        <td>
+                            <input id="noofseats" type="number" formControlName="noofseats" [ngModel]="bus.noofseats"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+
+                            <span  class="text-danger" *ngIf="errorcap!=''">{{errorcap}}</span>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <label for="busfare" class="control-label">Bus Fare</label>
+                        </td>
+                        <td>
+                            <input id="busfare" type="number" formControlName="busfare" [ngModel]="bus.busfare"/>
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bustime" class="control-label">Bus Time</label>
+                        </td>
+                        <td>
+                            <input id="bustime" type="text" formControlName="bustime" [ngModel]="bus.bustime" />
+                        </td>
+                        <td>
+                            <span class="text-danger" *ngIf="errormsg!=''">{{errormsg}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <input style="margin-left:75px;cursor: pointer;border:none;height:35px;background: darkblue;width:100px;color:white;border-radius: 17px;;" type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <br />
+            </form>
+            <!-- <form [formGroup]="admineditbusform" (ngSubmit)="edit()">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Busid" />
+                <div class="form-group">
+                    <label asp-for="Busname" class="control-label"></label>
+                    <input asp-for="Busname" />
+                    <span asp-validation-for="Busname" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <label asp-for="Source" class="control-label"></label>
+                    <input asp-for="Source" />
+                    <span asp-validation-for="Source" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <label asp-for="Destination" class="control-label"></label>
+                    <input asp-for="Destination" />
+                    <span asp-validation-for="Destination" class="text-danger"></span>
+                </div><br /> 
+                <div class="form-group">
+                    <label asp-for="Seatcapacity" class="control-label"></label>
+                    <input asp-for="Seatcapacity" />
+
+                    <span asp-validation-for="Seatcapacity" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <label asp-for="Noofseats" class="control-label"></label>
+                    <input asp-for="Noofseats" />
+
+                    <span asp-validation-for="Noofseats" class="text-danger"></span>
+                </div><br />
+
+                <div class="form-group">
+                    <label asp-for="Busfare" class="control-label"></label>
+                    <input asp-for="Busfare" />
+                    <span asp-validation-for="Busfare" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <label asp-for="Bustime" class="control-label"></label>
+                    <input asp-for="Bustime" />
+                    <span asp-validation-for="Bustime" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+                <br />
+            </form> -->
+        </div>
+    </div>
+
+    <div>
+        <button style="background: darkblue;color:white;border-radius: 17px;cursor: pointer;border:none;height:35px;" routerLink="/ViewBusDetailsAdmin"><a style="text-decoration:none;color:antiquewhite" asp-action="ViewBusDetailsAdmin">Back to Bus Details</a></button>
+
+    </div>
+</div>
+<app-adminfooter></app-adminfooter>

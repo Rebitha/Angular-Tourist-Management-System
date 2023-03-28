@@ -1,0 +1,43 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.bgdiv {
+    background-image: url("https://cdn.pixabay.com/photo/2022/08/23/21/33/road-7406539__340.jpg");
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+    height: 780px;
+    background-repeat: no-repeat;
+}
+
+.textdesignwel {
+    font-family: fantasy;
+    padding-top: 250px;
+    font-size:27px;
+    color: antiquewhite;
+}
+
+.button-design {
+    
+    border-radius: 3px;
+    display: inline-block;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    transition: all 0.2s;
+}
+button{
+    font-size: 18px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+    .button-design:hover {
+        box-shadow: 1px 2px 3px 1px grey;
+    }

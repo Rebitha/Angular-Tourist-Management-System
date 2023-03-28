@@ -1,0 +1,69 @@
+
+<app-customer-pages></app-customer-pages>
+
+<h3 style="margin:60px;margin-left:700px;">My Bookings</h3><br />
+<br />
+<div style="margin-left:150px;"*ngFor="let item of mybookingslist">
+            <div style="height:200px;">
+                <div style="width:290px;float:left;"><p></p></div>
+                <div style="width:290px;float:left;">
+                    <i class="fa fa-bus" style="font-size:48px;color:darkblue"></i><br><br>
+            <p style="font-size:25px;">{{item.bookingdate}}</p>
+                </div>
+        <div style="float:left;width:300px;">
+            
+            <p style="font-size:25px;color:darkblue;">{{item.bus.source}} - {{item.bus.destination}}</p>
+                <p>{{item.bus.busname}}</p>
+            <p>{{item.noofseats}} Seats</p>
+                </div>
+        
+            
+            <div style="float:left;width:290px;">
+                <div *ngIf="item.bookingstatus==true">
+                    <p style="color:green;font-size:20px;">Booked</p>
+                </div>
+                <div *ngIf="item.bookingstatus==false">
+                    <p style="color:red;font-size:20px;">Cancelled</p>
+                </div>
+        </div>
+        <div *ngIf="item.bookingstatus">
+            <a [routerLink]="['/Viewticket',item.bookingid]">View Ticket</a>
+            </div>
+                <!-- @if (item.Bookingstatus == true)
+                {
+                    @Html.ActionLink("View Ticket","ViewTicket",new {id=item.Bookingid})
+                }
+                else
+                {
+                    @Html.ActionLink("View Ticket","ViewTicket",new {id=item.Bookingid}, new { @class = "btn btn-default disabled" })
+                } -->
+
+        <div *ngIf="item.bookingstatus==false">
+            <a aria-disabled="true">View Ticket</a>
+        </div>
+    <div style="float:left;width:290px;">
+            <div *ngIf="item.bookingstatus==true">
+                <a [routerLink]="['/CancelBooking',item.bookingid]">Cancel</a>
+            </div>
+            <div *ngIf="item.bookingstatus==false">
+                <p>Cancelled</p>
+            </div>
+        <!-- @if (item.Bookingstatus == true)
+        {
+            @Html.ActionLink("Cancel", "DeleteBookingDetail", new {  id=item.Bookingid  })
+        }
+        else
+        {
+            @Html.ActionLink("Cancelled", "DeleteBookingDetail", new { id = item.Bookingid}, new { @class = "btn btn-default disabled" })
+
+        } -->
+
+    </div>
+    </div>
+    <hr />
+            
+        </div>
+
+  <!-- <button><a style="text-decoration:none;color:antiquewhite" asp-action="ViewTouristSpots" asp-controller="Tourist">Back</a></button> -->
+
+<app-customerfooter></app-customerfooter>

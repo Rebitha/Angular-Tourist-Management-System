@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+   
+
+    
+
+    <app-customer-pages></app-customer-pages>
+
+
+<div class="container d-flex justify-content-center mt-50 mb-50"  id="contentToConvert">
+  
+    <div class="row">
+        <div class="col-md-12 text-right mb-3">
+            <button class="btn btn-primary" id="download" (click)="makepdf()"> Download Ticket</button>
+        </div>
+        <div class="col-md-12" id="content" #content>
+            <div class="card" id="invoice">
+                <div class="card-header bg-transparent header-elements-inline">
+                    <h6 class="card-title" style="font-family:fantasy;margin:20px;font-size:30px;color:darkblue">Book My Travel</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-4 pull-left">
+
+                                <ul class="list list-unstyled mb-0 text-left">
+                                    <li>ABC Nagar</li>
+                                    <li>Chennai-666666</li>
+                                    <li>query@bookmytravel.com </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-4 ">
+                                <div class="text-sm-right">
+                                    <h4 class="invoice-color mb-2 mt-md-2">
+                                        Ticket No : B0000<span>{{ticket.bookingid}}</span>
+                                    </h4>
+                                    <ul class="list list-unstyled mb-0">
+                                        <li>Date: <span class="font-weight-semibold">{{ticket.bookingdate}}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-md-flex flex-md-wrap">
+                        <div class="mb-4 mb-md-2 text-left">
+                            <span class="text-muted">Ticket To:</span>
+                            <ul class="list list-unstyled mb-0">
+                                <li>
+                                    <h5 class="my-2">{{customer.customername}}</h5>
+                                </li>
+                                <li>{{customer.nationality}}</li>
+                                <li>{{customer.customercontact}}</li>
+                                <li><a href="#" style="color:darkblue"data-abc="true">{{customer.customermailid}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="mb-2 ml-auto">
+                            <span class="text-muted">Payment Details:</span>
+                            <div class="d-flex flex-wrap wmin-md-400">
+                                <ul class="list list-unstyled mb-0 text-left">
+                                    <li>
+                                        <h5 class="my-2">Total Fare : </h5>
+                                    </li>
+                                    <li>No Of Seats:</li>
+                                    <li>Country:</li>
+                                    <li>Contact:</li>
+                                </ul>
+                                <ul class="list list-unstyled text-right mb-0 ml-auto">
+                                    <li>
+                                        <h5 class="font-weight-semibold my-2">{{ticket.totalfare}}</h5>
+                                    </li>
+                                    <li><span class="font-weight-semibold">{{ticket.noofseats}}</span></li>
+                                    <li>{{customer.nationality}}</li>
+                                    <li>{{customer.customercontact}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-lg">
+                        <thead>
+                            <tr>
+                                <th>No Of Seats</th>
+                                <th>Bus Name</th>
+                                <th>Fare</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {{ticket.noofseats}}
+                                </td>
+                                <td>{{ticket.bus.busname}}</td>
+                                <td>{{ticket.totalfare}}</td>
+                            </tr>
+                           
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-body">
+                    <div class="d-md-flex flex-md-wrap">
+                        <div class="pt-2 mb-3 wmin-md-400 ml-auto">
+                            <h6 class="mb-3 text-left">Details</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th class="text-left">From</th>
+                                            <td class="text-right">{{ticket.bus.source}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-left">To</th>
+                                            <td class="text-right">{{ticket.bus.destination}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-left">Total Fare</th>
+                                            <td class="text-right text-primary">
+                                                <h5 class="font-weight-semibold" style="color:darkblue">{{ticket.totalfare}}</h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card-footer">
+                    <span class="text-muted">
+                        Keep certain essentials.Pack light.
+                        Pack snacks and water.
+                        Mask and hand sanitizer are as important as your mobile phone.                          
+                        Do not stand inside the buses while travelling. Standees are not allowed in the buses.
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>  <button><a style="text-decoration:none;color:antiquewhite" routerLink="/MyBookings">Back To Bookings Details</a></button>
+<br>
+<br>
+
+

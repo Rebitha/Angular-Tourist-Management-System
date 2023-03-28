@@ -1,0 +1,54 @@
+<app-adminheader></app-adminheader>
+
+<h3 style="margin-left:740px;margin-top: 20px;;">Bookings</h3>
+<br />
+<br />
+
+<div *ngFor="let item of mybookingslist" style="margin-left:350px;">
+    <div style="height:200px;">
+        <div style="width:200px;float:left;"><p></p></div>
+        <div style="width:180px;float:left;"><p>{{item.customerid}}</p></div>
+        <div style="width:290px;float:left;">
+            <i class="fa fa-bus" style="font-size:48px;color:darkblue"></i><br><br>
+            <p style="font-size:25px;">{{item.bookingdate}}</p>
+
+
+
+        </div>
+        <div style="float:left;width:290px;">
+
+            <p style="font-size:25px;color:darkblue;">{{item.bus.source}} - {{item.bus.destination}}</p>
+            <p>{{item.bus.busname}}</p>
+            <p>{{item.noofseats}}</p>
+        </div>
+
+
+        <div style="float:left;width:290px;">
+            <div *ngIf="item.bookingstatus==true">
+                <p style="color:green;font-size:20px;">Booked</p>
+
+            </div>
+           <div *ngIf="item.bookingstatus==false">
+            <p style="color:red;font-size:20px;">Cancelled</p>
+
+           </div>
+          
+
+        </div>
+        
+    </div>
+    <hr />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+  <button><a style="text-decoration:none;color:antiquewhite" asp-action="Index" asp-controller="Admin">Back</a></button>
+  <app-adminfooter></app-adminfooter>

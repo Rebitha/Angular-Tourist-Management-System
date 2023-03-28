@@ -1,0 +1,30 @@
+<app-customer-pages></app-customer-pages>
+    <h3>Are you sure you want to cancel booking?</h3><br /><br />
+    <div style="margin-left:400px;width:50%;height:300px;border-radius:10px;background-color:darkblue;color:white;">
+        <br />
+            <p style="font-size:25px;margin-left: 300px;">{{booking.bus.busname}}       </p><br>
+            <div style="float:left;width:100px;margin-left: 60px;">
+                <i class='fas fa-building' style='font-size:36px;color:white'></i><br />|<br />|<br />|<br />
+                <i class='fas fa-building' style='font-size:36px;color:white'></i> 
+            </div>
+            <div style="float:left;width:150px;">
+                {{booking.bus.source}}<br /><br /><br /><br /> <br />{{booking.bus.destination}}
+            </div>
+              
+            
+            <p>Boarding Time : {{booking.bus.bustime}}</p>
+            <p>No Of Seats : {{booking.noofseats}}</p>
+            <p>Travel Date : {{booking.bookingdate}}</p>
+            <p>Total Fare : {{booking.totalfare}}      </p>
+            <p>Status : Confirmed    </p>
+    
+        </div>
+        <br />
+        <br />
+        <form >
+           <div style="margin-left:708px;"> <button><a style="text-decoration:none;color:antiquewhite" (click)="MyBooking(booking.bookingid)" >Cancel Booking</a></button>
+           </div>
+        </form>
+        <app-customerfooter></app-customerfooter>
+    
+

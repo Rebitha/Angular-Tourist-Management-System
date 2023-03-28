@@ -1,0 +1,63 @@
+
+<style>
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    button {
+        border:none;
+        outline:none;
+        border-radius: 3px;
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 20px;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: Arial;
+        font-weight: 500;
+        text-align: center;
+        background: darkblue;
+        transition: all 0.2s;
+    }
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<app-adminheader></app-adminheader>
+    <div style="width:80%;margin-left:700px;;">
+    <h3>Tourist Spots</h3>
+    </div>
+<p style="margin-left:110px;">
+    <button class="w3-button w3-xlarge w3-circle w3-indigo" routerLink="/AdminAddTourist"><a style="color:white;" >+</a></button>
+</p>
+    <div style="width:87%;background:#e6e7e8;margin-left:100px;">
+        <br />
+        <table class="table">
+            <tbody>
+                <!-- @foreach (var item in Model)
+                { -->
+                    <tr *ngFor="let item of touristspots">
+                        <td>
+                            <img src="../../assets/images/{{item.imagename}}" asp-append-version="true" width="200px" height="200px">
+                            <br><br>
+                        </td>
+                        <td>
+                            <br>
+                           Spot Name :  {{item.spotname}}<br>
+                           Spot Location :  {{item.spotlocation}}<br>
+                           Spot State :  {{item.spotstate}}<br>
+                           Image Name : {{item.imagename}}
+                        </td>
+                        <td>
+                            <br><br>
+                            <button style="background:green;"><a style="color:white" >Edit</a> </button><span>     </span>
+                            <button style="background:red;"><a style="color:white" >Delete</a></button>
+                        </td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div><br />
+    <button><a style="text-decoration:none;color:antiquewhite" >Back</a></button>
+    <app-adminfooter></app-adminfooter>

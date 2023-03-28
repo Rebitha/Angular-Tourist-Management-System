@@ -1,0 +1,56 @@
+
+<div style="height:700px">
+    <br>
+    <br>
+   <h3 style="margin-left:700px;">Admin Login</h3>
+    <div class="row">
+        <div class="col-md-4 outerdivform">
+            <form [formGroup]="adminloginform" (ngSubmit)="login()">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="innerdivform">
+                    <!-- @if (@ViewBag.msg != null)
+                    {
+                        <h6 style="color:red;">Invalid Email Id or Password</h6>
+                    } -->
+                    <div class="form-group " style="padding:20px;">
+                        <label for="Adminmail" style="margin-left:70px;" class="control-label">Mail Id</label><br />
+                        <input id="Adminmail" class="form-control inputdesign" formControlName="adminmailid"/>
+                        <!-- <span asp-validation-for="Adminmail" class="text-danger"></span> -->
+                        <span  *ngIf="adminloginform.controls['adminmailid'].errors && adminloginform.controls['adminmailid'].touched">
+                            <span style="font-size:15px;" *ngIf="adminloginform.controls['adminmailid'].errors['required']">*</span>
+                            <span *ngIf="adminloginform.controls['adminmailid'].errors['adminmailid']">Invalid email</span>
+
+                        </span>
+                        <span *ngIf="errormsg1!=''" class="alert alert-danger" style="text-align:center;font-size:13px;">{{errormsg1}}</span>
+
+                    </div><br />
+                    <div class="form-group"style="padding:20px;">
+                        <label for="Adminpassword" style="margin-left:70px;" class="control-label">Password</label><br />
+                        <input id="Adminpassword" type="password" class="form-control inputdesign" formControlName="adminpassword"/>
+                        <!-- <span asp-validation-for="Adminpassword" class="text-danger"></span> -->
+                        <span  *ngIf="adminloginform.controls['adminpassword'].errors && adminloginform.controls['adminpassword'].touched">
+
+                            <span style="color:white;font-size:15px;" *ngIf="adminloginform.controls['adminpassword'].errors['required']">*</span>
+                            </span>
+                           
+                            <span *ngIf="errormsg2!=''" class="alert alert-danger" style="text-align:center;font-size:13px;">{{errormsg2}}</span>
+    
+                    </div>
+                    <br />
+                    <div class="form-group" style="margin-left:50px;">
+                        <input type="submit" class="button-design" value="Login" style="background-color:darkblue;color:white;width:140px;height:40px;cursor: pointer;border:none;" />
+                    </div>
+
+                </div>
+                <br />  <a routerLink="/Login" style="margin-left:120px;font-size:15px;text-decoration:none;color:darkblue;">Are you a User ? Sign in</a>
+
+
+
+
+
+            </form>
+        </div>
+
+    </div>
+</div>

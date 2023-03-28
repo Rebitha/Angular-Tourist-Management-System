@@ -1,0 +1,40 @@
+
+.bodyplace {
+    height: 400px;
+    width: 80%;
+    margin: 100px;
+    border-radius: 3px;
+    margin-left: 150px;
+    background: #e6e7e8;
+}
+.bodyplace:hover{
+        box-shadow: 1px 1px 3px 1px;
+}
+img {
+    margin-left: 450px;
+    margin: 60px;
+    border-radius: 10px;
+}
+
+.spotnamestyle {
+    font-family: Consolas;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.floatdiv {
+    float: left;
+}
+
+.textstyle {
+    margin-top: 60px;
+}
+
+.bgdiv {
+    background-image: url("https://i.pinimg.com/originals/a1/e4/d8/a1e4d819ee906293f1b2e8f6de19dcbe.jpg");
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+    height: 250px;
+    background-repeat: no-repeat;
+}

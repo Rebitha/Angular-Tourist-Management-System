@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bgdiv {
+    background-image: url("https://cdn.pixabay.com/photo/2022/08/23/21/33/road-7406539__340.jpg");
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+    height: 780px;
+    background-repeat: no-repeat;
+}
+
+.outerdivform {
+    width: 400px;
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 1px 1px 3px 1px;
+    border-radius: 3px;
+    height: 520px;
+    backdrop-filter: blur(5px);
+    color: white;
+    margin-left: 570px;
+    margin-top:100px;
+}
+
+.innerdivform {
+
+    margin-left: 80px;
+}
+
+.inputdesign {
+    width: 200px;
+}
+
+.button-design {
+    border-radius: 3px;
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+}
+input{
+    height:25px;
+    margin:10px;
+    padding:3px;
+}

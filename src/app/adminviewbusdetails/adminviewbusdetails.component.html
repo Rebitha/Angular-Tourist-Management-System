@@ -1,0 +1,44 @@
+<app-adminheader></app-adminheader>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <h3 style="margin-left:700px;">Add Bus Details</h3>
+
+    <p style="margin-left:110px;">
+        <button class="w3-button w3-xlarge w3-circle w3-indigo" routerLink="/AdminAddBusDetails"><a style="color:white;" >+</a></button>
+    </p>
+    <div style="width:88%;background:#e6e7e8;margin-left: 100px;">
+        <table class="table">
+            <tbody>
+
+
+                
+                    <tr *ngFor ="let item of buslist">
+                        <td >
+                            <p class="busnamestyle">{{item.busname}}</p>
+                            <br><br>
+                        </td>
+                        <td>
+                            <br>
+                            Source :  {{item.source}}<br>
+                            Destination :  {{item.destination}}<br>
+                            No Of Seats :  {{item.noofseats}}<br>
+                            Fare :  {{item.busfare}}<br>
+                            Bus Time : {{item.bustime}}
+                        </td>
+                        <td>
+                            <br><br>
+                            <button style="background:green;margin:10px;"><a style="color:white" [routerLink]="['/AdminEditBusDetails',item.busid]">Edit</a> </button><span>     </span>
+                            <button style="background:red;" ><a style="color:white" (click)="dlt(item.busid)">Delete</a></button>
+                        </td>
+                    </tr>
+                
+
+                    <!-- [routerLink]="['/AdminDeleteBus',item.busid]" -->
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <button routerLink="/Home"><a style="text-decoration:none;color:antiquewhite" >Back</a></button>
+
+<app-adminfooter></app-adminfooter>

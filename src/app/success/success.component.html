@@ -1,0 +1,40 @@
+<app-customer-pages></app-customer-pages>
+
+
+<div>
+         <h3>Booking Confirmation  </h3><br /><br />
+         <div style="margin-left:400px;width:50%;height:300px;border-radius:10px;background-color:darkblue;color:white;">
+             <br />
+             <p style="font-size:25px;margin-left: 300px;">{{bus.busname}}</p>
+             <br>
+             <div style="float:left;width:100px;margin-left: 60px;">
+                 <i class='fas fa-building' style='font-size:36px;color:white'></i><br />|<br />|<br />|<br />
+                 <i class='fas fa-building' style='font-size:36px;color:white'></i>
+             </div>
+             <div style="float:left;width:150px;">
+                 {{bus.source}}<br /><br /><br /><br /> <br />{{bus.destination}}
+             </div>
+ 
+ 
+             <p>Boarding Time : {{bus.bustime}}</p>
+             
+             <p>No Of Seats : {{ticket.noofseats}}</p>
+ 
+             <p>Travel Date : {{ticket.bookingdate}}</p>
+             <p>Fare : {{ticket.totalfare}}     </p>
+             <p>Status : Confirmed    </p>
+ 
+         </div>
+         <br />
+         <br />
+ 
+         <div style="margin-left:380px;">Hi {{customer.customername}} .Your travel from {{bus.source}} to {{bus.destination}} is confirmed .You will receive info to your mail Id {{customer.customermailid}}</div>
+         <br /><div style="margin-left:680px;">Your total fare is {{ticket.totalfare}} .</div>
+         <br />
+  <!-- <button><a style="text-decoration:none;color:antiquewhite" asp-action="ViewTouristSpots" asp-route-id="" asp-controller="Tourist">Back To Home</a></button> -->
+        <div style="margin-left:708px;"> <button>   <a style="text-decoration:none;color:antiquewhite" [routerLink]="['/Viewticket',ticket.bookingid]">ViewTicket</a></button></div>
+         
+     <br /><br />
+    
+ </div>
+ <app-customerfooter></app-customerfooter>
